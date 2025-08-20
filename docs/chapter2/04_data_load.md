@@ -74,14 +74,7 @@ Unstructured能够识别和分类以下文档元素：
 
 在第一章的示例中，我们使用了LangChain的`UnstructuredMarkdownLoader`，它是LangChain对Unstructured库的封装。接下来展示如何直接使用Unstructured库，这样可以获得更大的灵活性和控制力。
 
-### 3.1 安装依赖
-
-```bash
-cd code/C2
-pip install -r requirements.txt
-```
-
-### 3.2 代码示例
+### 3.1 代码示例
 
 创建一个简单的示例，尝试使用Unstructured库加载并解析一个PDF文件：
 

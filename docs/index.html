@@ -77,6 +77,38 @@
             text-align: center;
             padding: 15px 0;
         }
+        /* 语言切换器样式 */
+        .app-nav {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            z-index: 10;
+        }
+        .app-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .app-nav li {
+            display: inline-block;
+        }
+        #lang-selector {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 6px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #lang-selector:hover {
+            border-color: #42b883;
+        }
+        #lang-selector:focus {
+            outline: none;
+            border-color: #42b883;
+            box-shadow: 0 0 0 2px rgba(66, 184, 131, 0.2);
+        }
     </style>
 </head>
 
@@ -92,18 +124,32 @@
             auto2top: true,
             subMaxLevel: 3,
             alias: {
+                '/en/_sidebar.md': '/en/_sidebar.md',
+                '/en/.*/_sidebar.md': '/en/_sidebar.md',
                 '/.*/_sidebar.md': '/_sidebar.md'
             },
             search: {
                 maxAge: 86400000,
                 paths: 'auto',
-                placeholder: '🔍 搜索',
-                noData: '😞 找不到结果',
+                placeholder: {
+                    '/en/': '🔍 Search',
+                    '/': '🔍 搜索'
+                },
+                noData: {
+                    '/en/': '😞 No Results',
+                    '/': '😞 找不到结果'
+                },
                 depth: 6
             },
             pagination: {
-                previousText: '上一章节',
-                nextText: '下一章节',
+                previousText: {
+                    '/en/': 'Previous',
+                    '/': '上一章节'
+                },
+                nextText: {
+                    '/en/': 'Next',
+                    '/': '下一章节'
+                }
             },
             count: {
                 countable: true,
@@ -119,6 +165,70 @@
                         html = html.replace(/\[\^([^\]]+)\]/g, '<sup><a href="#fn-$1" id="fnref-$1">$1</a></sup>');
                         html = html.replace(/^\[\^([^\]]+)\]:\s*(.+)$/gm, '<div class="footnote" id="fn-$1"><p>$2 <a href="#fnref-$1">↩</a></p></div>');
                         return html;
+                    });
+                },
+                // 语言切换插件
+                function(hook, vm) {
+                    hook.mounted(function() {
+                        // 添加语言切换按钮到导航栏
+                        var nav = document.querySelector('.app-nav');
+                        if (!nav) {
+                            nav = document.createElement('nav');
+                            nav.className = 'app-nav';
+                            document.querySelector('main').appendChild(nav);
+                        }
+
+                        var langSwitcher = document.createElement('ul');
+                        langSwitcher.innerHTML = `
+                            <li>
+                                <select id="lang-selector" style="background: transparent; border: 1px solid #ccc; border-radius: 4px; padding: 4px 8px;">
+                                    <option value="">中文</option>
+                                    <option value="en">English</option>
+                                </select>
+                            </li>
+                        `;
+                        nav.appendChild(langSwitcher);
+
+                        // 监听语言切换
+                        var selector = document.getElementById('lang-selector');
+                        selector.addEventListener('change', function(e) {
+                            var lang = e.target.value;
+                            var currentPath = location.hash.replace('#/', '');
+
+                            if (lang === '') {
+                                // 切换到中文
+                                if (currentPath.startsWith('en/')) {
+                                    location.hash = '#/' + currentPath.replace('en/', '');
+                                } else {
+                                    location.hash = '#/';
+                                }
+                            } else {
+                                // 切换到英文
+                                if (currentPath === '' || currentPath === '/') {
+                                    location.hash = '#/en/';
+                                } else if (currentPath.startsWith('en/')) {
+                                    // 已经在英文页面
+                                    return;
+                                } else {
+                                    location.hash = '#/en/' + currentPath;
+                                }
+                            }
+                        });
+
+                        // 根据当前路径设置选择器状态
+                        function updateSelector() {
+                            var currentPath = location.hash.replace('#/', '');
+                            if (currentPath.startsWith('en/')) {
+                                selector.value = 'en';
+                            } else {
+                                selector.value = '';
+                            }
+                        }
+
+                        updateSelector();
+
+                        // 监听路由变化
+                        window.addEventListener('hashchange', updateSelector);
                     });
                 }
             ]

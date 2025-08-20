@@ -208,6 +208,8 @@ load_dotenv()
 
 ## 四、低代码（基于LlamaIndex）
 
+> 若出现nltk相关报错，尝试运行代码路径下[fix_nltk.py](https://github.com/datawhalechina/all-in-rag/blob/main/code/C1/fix_nltk.py)
+
 在RAG方面，LlamaIndex提供了更多封装好的API接口，这无疑降低了上手门槛，下面是一个简单实现：
 
 ```python

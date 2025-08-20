@@ -6,6 +6,8 @@
 
 ## 项目简介 [![Stars](https://img.shields.io/github/stars/datawhalechina/all-in-rag?style=social)](https://github.com/datawhalechina/all-in-rag/stargazers) ![GitHub forks](https://img.shields.io/github/forks/datawhalechina/all-in-rag) [![Python](https://img.shields.io/badge/Python-3.12.7-blue)](https://www.python.org/) [![Online Reading](https://img.shields.io/badge/Online%20Reading-Click%20Here-blue)](https://datawhalechina.github.io/)
 
+中文 | [English](en/)
+
 本项目是一个面向大模型应用开发者的RAG（检索增强生成）技术全栈教程，旨在通过体系化的学习路径和动手实践项目，帮助开发者掌握基于大语言模型的RAG应用开发技能，构建生产级的智能问答和知识检索系统。
 
 **主要内容包括：**
@@ -53,63 +55,64 @@
 
 ### 第一部分：RAG基础入门
 
-**第一章 解锁RAG** [📖 查看章节](./docs/chapter1)
-1. [x] [RAG简介](./docs/chapter1/01_RAG_intro.md) - RAG技术概述与应用场景
-2. [x] [准备工作](./docs/chapter1/02_preparation.md) - 环境配置与工具准备
-3. [x] [四步构建RAG](./docs/chapter1/03_get_start_rag.md) - 快速上手RAG开发
+**第一章 解锁RAG** [📖 查看章节](chapter1)
+1. [x] [RAG简介](chapter1/01_RAG_intro.md) - RAG技术概述与应用场景
+2. [x] [准备工作](chapter1/02_preparation.md) - 环境配置与工具准备
+3. [x] [四步构建RAG](chapter1/03_get_start_rag.md) - 快速上手RAG开发
+4. [x] [附：环境部署](chapter1/virtualenv.md) - Python虚拟环境部署方案补充
 
-**第二章 数据准备** [📖 查看章节](./docs/chapter2)
-1. [x] [数据加载](./docs/chapter2/04_data_load.md) - 多格式文档处理与加载
-2. [x] [文本分块](./docs/chapter2/05_text_chunking.md) - 文本切分策略与优化
+**第二章 数据准备** [📖 查看章节](chapter2)
+1. [x] [数据加载](chapter2/04_data_load.md) - 多格式文档处理与加载
+2. [x] [文本分块](chapter2/05_text_chunking.md) - 文本切分策略与优化
 
 ### 第二部分：索引构建与优化
 
-**第三章 索引构建** [📖 查看章节](./docs/chapter3)
-1. [x] [向量嵌入](./docs/chapter3/06_vector_embedding.md) - 文本向量化技术详解
-2. [x] [多模态嵌入](./docs/chapter3/07_multimodal_embedding.md) - 图文多模态向量化
-3. [x] [向量数据库](./docs/chapter3/08_vector_db.md) - 向量存储与检索系统
-4. [x] [Milvus实践](./docs/chapter3/09_milvus.md) - Milvus多模态检索实战
-5. [x] [索引优化](./docs/chapter3/10_index_optimization.md) - 索引性能调优技巧
+**第三章 索引构建** [📖 查看章节](chapter3)
+1. [x] [向量嵌入](chapter3/06_vector_embedding.md) - 文本向量化技术详解
+2. [x] [多模态嵌入](chapter3/07_multimodal_embedding.md) - 图文多模态向量化
+3. [x] [向量数据库](chapter3/08_vector_db.md) - 向量存储与检索系统
+4. [x] [Milvus实践](chapter3/09_milvus.md) - Milvus多模态检索实战
+5. [x] [索引优化](chapter3/10_index_optimization.md) - 索引性能调优技巧
 
 ### 第三部分：检索技术进阶
 
-**第四章 检索优化** [📖 查看章节](./docs/chapter4)
-1. [x] [混合检索](./docs/chapter4/11_hybrid_search.md) - 稠密+稀疏检索融合
-2. [x] [查询构建](./docs/chapter4/12_query_construction.md) - 智能查询理解与构建
-3. [x] [Text2SQL](./docs/chapter4/13_text2sql.md) - 自然语言转SQL查询
-4. [x] [查询重构与分发](./docs/chapter4/14_query_rewriting.md) - 查询优化策略
-5. [x] [检索进阶技术](./docs/chapter4/15_advanced_retrieval_techniques.md) - 高级检索算法
+**第四章 检索优化** [📖 查看章节](chapter4)
+1. [x] [混合检索](chapter4/11_hybrid_search.md) - 稠密+稀疏检索融合
+2. [x] [查询构建](chapter4/12_query_construction.md) - 智能查询理解与构建
+3. [x] [Text2SQL](chapter4/13_text2sql.md) - 自然语言转SQL查询
+4. [x] [查询重构与分发](chapter4/14_query_rewriting.md) - 查询优化策略
+5. [x] [检索进阶技术](chapter4/15_advanced_retrieval_techniques.md) - 高级检索算法
 
 ### 第四部分：生成与评估
 
-**第五章 生成集成** [📖 查看章节](./docs/chapter5)
-1. [x] [格式化生成](./docs/chapter5/16_formatted_generation.md) - 结构化输出与格式控制
+**第五章 生成集成** [📖 查看章节](chapter5)
+1. [x] [格式化生成](chapter5/16_formatted_generation.md) - 结构化输出与格式控制
 
-**第六章 RAG系统评估** [📖 查看章节](./docs/chapter6)
-1. [x] [评估介绍](./docs/chapter6/18_system_evaluation.md) - RAG系统评估方法论
-2. [x] [评估工具](./docs/chapter6/19_common_tools.md) - 常用评估工具与指标
+**第六章 RAG系统评估** [📖 查看章节](chapter6)
+1. [x] [评估介绍](chapter6/18_system_evaluation.md) - RAG系统评估方法论
+2. [x] [评估工具](chapter6/19_common_tools.md) - 常用评估工具与指标
 
 ### 第五部分：高级应用与实战
 
-**第七章 高级RAG架构（拓展选修篇）** [📖 查看章节](./docs/chapter7)
+**第七章 高级RAG架构（拓展选修篇）** [📖 查看章节](chapter7)
 
-1. [x] [基于知识图谱的RAG](./docs/chapter7/20_kg_rag.md)
+1. [x] [基于知识图谱的RAG](chapter7/20_kg_rag.md)
 
-**第八章 项目实战一（基础篇）** [📖 查看章节](./docs/chapter8)
-1. [x] [环境配置与项目架构](./docs/chapter8/01_env_architecture.md)
-2. [x] [数据准备模块实现](./docs/chapter8/02_data_preparation.md)
-3. [x] [索引构建与检索优化](./docs/chapter8/03_index_retrieval.md)
-4. [x] [生成集成与系统整合](./docs/chapter8/04_generation_sys.md)
+**第八章 项目实战一（基础篇）** [📖 查看章节](chapter8)
+1. [x] [环境配置与项目架构](chapter8/01_env_architecture.md)
+2. [x] [数据准备模块实现](chapter8/02_data_preparation.md)
+3. [x] [索引构建与检索优化](chapter8/03_index_retrieval.md)
+4. [x] [生成集成与系统整合](chapter8/04_generation_sys.md)
 
-**第九章 项目实战一优化（选修篇）** [📖 查看章节](./docs/chapter9)
+**第九章 项目实战一优化（选修篇）** [📖 查看章节](chapter9)
 
 [🍽️ 项目展示](https://github.com/FutureUnreal/What-to-eat-today)
-1. [x] [图RAG架构设计](./docs/chapter9/01_graph_rag_architecture.md)
-2. [x] [图数据建模与准备](./docs/chapter9/02_graph_data_modeling.md)
-3. [x] [Milvus索引构建](./docs/chapter9/03_index_construction.md)
-4. [x] [智能查询路由与检索策略](./docs/chapter9/04_intelligent_query_routing.md)
+1. [x] [图RAG架构设计](chapter9/01_graph_rag_architecture.md)
+2. [x] [图数据建模与准备](chapter9/02_graph_data_modeling.md)
+3. [x] [Milvus索引构建](chapter9/03_index_construction.md)
+4. [x] [智能查询路由与检索策略](chapter9/04_intelligent_query_routing.md)
 
-**第十章 项目实战二（选修篇）** [📖 查看章节](./docs/chapter10) *规划中*
+**第十章 项目实战二（选修篇）** [📖 查看章节](chapter10) *规划中*
 
 ## 目录结构说明
 
